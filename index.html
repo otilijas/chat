@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Chato pvz</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>    
+    <style>
+
+        body {
+            background-color: rgb(243, 233, 220);
+            display:flex;
+            /* flex-flow:row wrap; */
+            justify-content:center;
+            margin:0;
+            /* height:100%; */
+            align-items:center;
+            align-content:center;
+            padding:0 4rem;
+        }
+
+        .container-1 {
+            display:flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items:center;
+            align-content:center;
+            position: absolute;
+            bottom: 60px;
+            overflow-y: hidden;
+        }
+
+        .container-2 {
+            display: flex;
+            /* flex-direction: column; */
+            justify-content:center;
+            align-items:center;
+            align-content:center;
+            position: fixed;
+            bottom: 0;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            width: 100%;
+            background-color: #b89b86;
+            font-size: small;
+        }
+
+        .wrapper {
+            display:flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items:center;
+            align-content:center;
+        }
+
+        @keyframes messageAppear {
+            0% {
+                transform: skew(-0.03turn, 10deg);
+            }
+
+            50% {
+                transform: skew(.312rad);
+            }
+        }
+
+
+        .message {
+            display:flex;
+            background-color:rgb(255, 255, 255);
+            padding:20px;
+            border-radius:10px;
+            min-width:80px;
+            max-width:420px;
+            min-height:40px;
+            margin:10px;
+            position:relative;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+            border-left:rgb(59, 241, 232) 5px solid;
+            border-right:rgb(85, 78, 68) 5px solid;
+            font-size: small;
+            animation: messageAppear 600ms linear 0s 1 forwards;
+        }
+
+        .message::after {
+            position: absolute;
+            content: '';
+            border: 20px solid transparent;
+        }
+        
+        .right.message::after {
+            border-right-color: rgb(255, 255, 255);
+            bottom: -20px;
+            left: 60%;
+        }
+
+        .user {
+            font-size: 10px;
+            left: 80%
+        }
+
+        #submit {
+            background-color:rgb(59, 241, 232);
+            border: none;
+            color: white;
+            font-size: 15px;
+            width: 120px;
+            transition-duration: 600ms;
+        }
+
+        #submit:hover {
+            background-color: rgb(85, 78, 68);
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container-1" id="container-1">
+            <p class="message right">That’s another good reason we’ll recommend that only the front end deals with time zones in most cases.</p>
+            <p class="user">Jonas</p>
+            <p class="message right">It’s worth considering what your codebase depends on for this for each.</p>
+            <p class="user">Monika</p>
+            <p class="message right">Standardizing the time is wonderful because I only need to store the UTC time and as long as I know the time zone of the user, I can always convert to their time.</p>
+            <p class="user">Ema</p>
+        </div>
+        <div class="container-2">
+            <input id="username" type="text" placeholder="Your username">
+            <input id="writtenMessage" type="text" placeholder="Your message">
+            <button id='submit' type='submit'>Send</button>
+              <script src="main.js" defer></script>
+        </div>
+    </div>
+</body>
+
+</html>
